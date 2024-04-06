@@ -9,8 +9,14 @@
 		  <input id="year" type="number" placeholder="Enter Your Graduation Year">
 		  <button id="button" type="submit">Submit</button>
 	  </form>
-    <script type="text/javascript" src="./script.js">
-</script>
+    <script>
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            var queryString = document.getElementById('query').value;
+            var urlElement = document.getElementById('url');
+            urlElement.textContent = urlElement.textContent + '?' + queryString;
+        });
+    </script>
   </body>
-
+	
 </html>
